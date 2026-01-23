@@ -20,15 +20,17 @@
   </form>
 
   <!-- タスクリストのテンプレート -->
-  <template class="task-list-template">
-    <h2 class="task-list-title"></h2>
-    <ul id="task-list">
-      <!-- ここにタスクアイテムが入る -->
-    </ul>
+  <template id="task-list-template">
+    <div class="task-list-container">
+      <h2 class="task-list-title"></h2>
+      <ul class="task-list">
+        <!-- ここにタスクアイテムが入る -->
+      </ul>
+    </div>
   </template>
 
   <!-- タスクアイテムのテンプレート -->
-  <template class="task-item-template">
+  <template id="task-item-template">
     <h3 class="task-item-title"></h3>
     <p class="task-item-description"></p>
   </template>

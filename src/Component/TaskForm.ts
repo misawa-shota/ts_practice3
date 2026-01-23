@@ -8,14 +8,21 @@ export class TaskForm {
     this.titleInputEl = this.element.querySelector("#title")! as HTMLInputElement;
     this.descriptionEl = this.element.querySelector("#description")! as HTMLTextAreaElement;
     this.bindEvents();
+    this.clearInput();
   }
 
-  handleSubmit() {
+  handleSubmit(event: Event) {
+    event.preventDefault();
     console.log(this.titleInputEl.value);
     console.log(this.descriptionEl.value);
   }
 
   bindEvents() {
     this.element.addEventListener("submit", this.handleSubmit.bind(this));
+  }
+
+  clearInput() {
+    this.titleInputEl.value = "";
+    this.descriptionEl.value = "";
   }
 }
