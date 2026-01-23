@@ -1,3 +1,8 @@
 import { TaskForm } from "./Component/TaskForm.js";
+import { TaskList } from "./Component/TaskList.js";
+import { taskListData } from "./Types/TaskListType.js";
 new TaskForm();
+taskListData.forEach((taskList) => {
+    new TaskList("#task-list-template", taskList);
+});
 //# sourceMappingURL=index.js.map

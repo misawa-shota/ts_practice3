@@ -7,13 +7,19 @@ export class TaskForm {
         this.titleInputEl = this.element.querySelector("#title");
         this.descriptionEl = this.element.querySelector("#description");
         this.bindEvents();
+        this.clearInput();
     }
-    handleSubmit() {
+    handleSubmit(event) {
+        event.preventDefault();
         console.log(this.titleInputEl.value);
         console.log(this.descriptionEl.value);
     }
     bindEvents() {
         this.element.addEventListener("submit", this.handleSubmit.bind(this));
+    }
+    clearInput() {
+        this.titleInputEl.value = "";
+        this.descriptionEl.value = "";
     }
 }
 //# sourceMappingURL=TaskForm.js.map

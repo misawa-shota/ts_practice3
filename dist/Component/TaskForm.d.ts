@@ -3,7 +3,8 @@ export declare class TaskForm {
     titleInputEl: HTMLInputElement;
     descriptionEl: HTMLTextAreaElement;
     constructor();
-    handleSubmit(): void;
+    handleSubmit(event: Event): void;
     bindEvents(): void;
+    clearInput(): void;
 }
 //# sourceMappingURL=TaskForm.d.ts.map
