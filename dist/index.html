@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todoアプリ</title>
+</head>
+<body>
+  <h1>Todoアプリ</h1>
+  <form id="task-form">
+    <div class="form-block">
+      <label for="title" id="title-label">タイトル</label>
+      <input type="text" id="title" required autofocus />
+    </div>
+    <div class="form-block">
+      <label for="description" id="description-label">内容</label>
+      <textarea id="description" rows="3"></textarea>
+    </div>
+    <button type="submit" id="add-button">追加</button>
+  </form>
+
+  <!-- タスクリストのテンプレート -->
+  <template class="task-list-template">
+    <h2 class="task-list-title"></h2>
+    <ul id="task-list">
+      <!-- ここにタスクアイテムが入る -->
+    </ul>
+  </template>
+
+  <!-- タスクアイテムのテンプレート -->
+  <template class="task-item-template">
+    <h3 class="task-item-title"></h3>
+    <p class="task-item-description"></p>
+  </template>
+
+  <!-- ここにテンプレートをマウント -->
+  <div id="container"></div>
+
+  <script type="module" src="./index.js"></script>
+</body>
+</html>
