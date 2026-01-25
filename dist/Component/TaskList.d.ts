@@ -5,6 +5,6 @@ export declare class TaskList {
     taskList: TaskListType;
     constructor(templateId: string, _taskList: TaskListType);
     setup(): void;
-    mount(): void;
+    mount(selector: string): void;
 }
 //# sourceMappingURL=TaskList.d.ts.map

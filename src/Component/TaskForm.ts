@@ -1,3 +1,5 @@
+import { TaskItem } from "./TaskItem.js";
+
 export class TaskForm {
   element: HTMLFormElement;
   titleInputEl: HTMLInputElement;
@@ -13,8 +15,12 @@ export class TaskForm {
 
   handleSubmit(event: Event) {
     event.preventDefault();
-    console.log(this.titleInputEl.value);
-    console.log(this.descriptionEl.value);
+    const taskItem = new TaskItem("#task-item-template", {
+      title: this.titleInputEl.value,
+      description: this.descriptionEl.value,
+    });
+    taskItem.mount("#Todo");
+    this.clearInput();
   }
 
   bindEvents() {
