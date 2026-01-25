@@ -11,16 +11,15 @@ export class TaskList {
     this.element = clone.firstElementChild! as HTMLDivElement;
     this.taskList = _taskList;
     this.setup();
-    this.mount();
   }
 
   setup() {
     this.element.querySelector("h2")!.textContent = `${this.taskList}`;
-    this.element.querySelector("ul")!.id = `${this.taskList}-list`;
+    this.element.querySelector("ul")!.id = `${this.taskList}`;
   }
 
-  mount() {
-    const targetEl = document.getElementById("container")!;
+  mount(selector: string) {
+    const targetEl = document.querySelector(selector)!;
     targetEl.insertAdjacentElement("beforeend", this.element);
   }
 }
