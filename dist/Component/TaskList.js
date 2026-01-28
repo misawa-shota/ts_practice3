@@ -5,6 +5,7 @@ export class TaskList extends UiComponent {
     constructor(taskList) {
         super("#task-list-template");
         this.taskList = taskList;
+        this.setup();
     }
     setup() {
         this.element.querySelector("h2").textContent = `${this.taskList}`;
