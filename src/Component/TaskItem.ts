@@ -7,6 +7,7 @@ export class TaskItem extends UiComponent<HTMLLIElement> implements ClickAbleEle
 
   constructor(private task: Task) {
     super("#task-item-template");
+    this.setup();
     this.bindEvent();
   }
 
