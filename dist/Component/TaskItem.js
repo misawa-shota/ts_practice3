@@ -1,14 +1,10 @@
 import { taskListData } from "../Types/TaskListType.js";
-export class TaskItem {
-    templateEl;
-    element;
+import { UiComponent } from "./UiComponent.js";
+export class TaskItem extends UiComponent {
     task;
-    constructor(templateId, _task) {
-        this.templateEl = document.querySelector(templateId);
-        const clone = this.templateEl.content.cloneNode(true);
-        this.element = clone.firstElementChild;
-        this.task = _task;
-        this.setup();
+    constructor(task) {
+        super("#task-item-template");
+        this.task = task;
         this.bindEvent();
     }
     setup() {
@@ -16,10 +12,6 @@ export class TaskItem {
         const descriptionEl = this.element.querySelector(".task-item-description");
         titleEl.textContent = this.task.title;
         descriptionEl.textContent = this.task.description ? this.task.description : "";
-    }
-    mount(selector) {
-        const targetEl = document.querySelector(selector);
-        targetEl.insertAdjacentElement("beforeend", this.element);
     }
     handleClick(event) {
         event.preventDefault();

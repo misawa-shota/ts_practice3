@@ -15,7 +15,7 @@ export class TaskForm {
 
   handleSubmit(event: Event) {
     event.preventDefault();
-    const taskItem = new TaskItem("#task-item-template", {
+    const taskItem = new TaskItem({
       title: this.titleInputEl.value,
       description: this.descriptionEl.value,
     });

@@ -1,0 +1,1 @@
+{"version":3,"file":"UiComponent.d.ts","sourceRoot":"","sources":["../../src/Component/UiComponent.ts"],"names":[],"mappings":"AAAA,8BAAsB,WAAW,CAAC,CAAC,SAAS,WAAW;IACrD,UAAU,EAAE,mBAAmB,CAAC;IAChC,OAAO,EAAE,CAAC,CAAC;gBAEC,UAAU,EAAE,MAAM;IAM9B,QAAQ,CAAC,KAAK,IAAI,IAAI;IAEtB,KAAK,CAAC,QAAQ,EAAE,MAAM;CAIvB"}

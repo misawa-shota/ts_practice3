@@ -4,6 +4,6 @@ import { taskListData } from "./Types/TaskListType.js";
 
 new TaskForm();
 taskListData.forEach((taskList) => {
-  const list = new TaskList("#task-list-template", taskList);
+  const list = new TaskList(taskList);
   list.mount("#container");
 });
