@@ -5,6 +5,7 @@ export class TaskList extends UiComponent<HTMLDivElement> {
 
   constructor(private taskList: TaskListType) {
     super("#task-list-template");
+    this.setup();
   }
 
   setup() {

@@ -5,6 +5,7 @@ export class TaskItem extends UiComponent {
     constructor(task) {
         super("#task-item-template");
         this.task = task;
+        this.setup();
         this.bindEvent();
     }
     setup() {
