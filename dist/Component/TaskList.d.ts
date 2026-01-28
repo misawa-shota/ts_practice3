@@ -1,10 +1,8 @@
 import { type TaskListType } from "../Types/TaskListType.js";
-export declare class TaskList {
-    templateEl: HTMLTemplateElement;
-    element: HTMLDivElement;
-    taskList: TaskListType;
-    constructor(templateId: string, _taskList: TaskListType);
+import { UiComponent } from "./UiComponent.js";
+export declare class TaskList extends UiComponent<HTMLDivElement> {
+    private taskList;
+    constructor(taskList: TaskListType);
     setup(): void;
-    mount(selector: string): void;
 }
 //# sourceMappingURL=TaskList.d.ts.map

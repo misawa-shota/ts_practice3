@@ -1,17 +1,12 @@
 import type { Task } from "../Types/TaskType.js";
 import { type TaskListType, taskListData } from "../Types/TaskListType.js";
+import { UiComponent } from "./UiComponent.js";
+import type { ClickAbleElement } from "../Types/ClickAbleElementType.js";
 
-export class TaskItem {
-  templateEl: HTMLTemplateElement;
-  element: HTMLLIElement;
-  task: Task;
+export class TaskItem extends UiComponent<HTMLLIElement> implements ClickAbleElement {
 
-  constructor(templateId: string, _task: Task) {
-    this.templateEl = document.querySelector(templateId)! as HTMLTemplateElement;
-    const clone = this.templateEl.content.cloneNode(true) as DocumentFragment;
-    this.element = clone.firstElementChild! as HTMLLIElement;
-    this.task = _task;
-    this.setup();
+  constructor(private task: Task) {
+    super("#task-item-template");
     this.bindEvent();
   }
 
@@ -21,11 +16,6 @@ export class TaskItem {
 
     titleEl.textContent = this.task.title;
     descriptionEl.textContent = this.task.description ? this.task.description : "";
-  }
-
-  mount(selector: string) {
-    const targetEl = document.querySelector(selector)!;
-    targetEl.insertAdjacentElement("beforeend", this.element);
   }
 
   handleClick(event: MouseEvent) {

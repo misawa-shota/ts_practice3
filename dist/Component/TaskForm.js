@@ -12,7 +12,7 @@ export class TaskForm {
     }
     handleSubmit(event) {
         event.preventDefault();
-        const taskItem = new TaskItem("#task-item-template", {
+        const taskItem = new TaskItem({
             title: this.titleInputEl.value,
             description: this.descriptionEl.value,
         });
