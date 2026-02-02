@@ -1,0 +1,1 @@
+{"version":3,"file":"TaskTodosAdmin.d.ts","sourceRoot":"","sources":["../../src/Adminer/TaskTodosAdmin.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,SAAS,EAAE,MAAM,2BAA2B,CAAC;AAC3D,OAAO,KAAK,EAAE,IAAI,EAAE,MAAM,sBAAsB,CAAC;AAEjD,cAAM,cAAc;IAClB,SAAS,EAAE,SAAS,CAAC;;IAMrB,OAAO,CAAC,IAAI,EAAE,IAAI;CAGnB;AAED,eAAO,MAAM,cAAc,gBAAuB,CAAC"}
