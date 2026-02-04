@@ -10,6 +10,7 @@ class TaskTodosAdmin {
 
   addTask(task: Task) {
     this.taskTodos = [...this.taskTodos, task];
+    console.log(this.taskTodos);
   }
 }
 

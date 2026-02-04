@@ -5,6 +5,7 @@ class TaskTodosAdmin {
     }
     addTask(task) {
         this.taskTodos = [...this.taskTodos, task];
+        console.log(this.taskTodos);
     }
 }
 export const taskTodosAdmin = new TaskTodosAdmin();

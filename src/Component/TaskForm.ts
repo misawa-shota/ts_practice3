@@ -18,8 +18,6 @@ export class TaskForm {
       title: this.titleInputEl.value,
       description: this.descriptionEl.value,
     }
-    const taskItem = new TaskItem(task);
-    taskItem.mount("#Todo");
 
     // 作成したタスクをTodosを管理する配列に追加
     taskTodosAdmin.addTask(task);
