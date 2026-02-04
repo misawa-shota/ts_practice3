@@ -10,7 +10,4 @@ taskListData.forEach((taskList) => {
   list.mount("#container");
 });
 
-taskTodosAdmin.taskTodos.forEach((task) => {
-  const taskItem = new TaskItem(task);
-  taskItem.mount("#Todo");
-});
+taskTodosAdmin.getTasks();

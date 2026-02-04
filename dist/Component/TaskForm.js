@@ -1,4 +1,5 @@
 import { TaskItem } from "./TaskItem.js";
+import { taskTodosAdmin } from "../Adminer/TaskTodosAdmin.js";
 export class TaskForm {
     element;
     titleInputEl;
@@ -12,11 +13,12 @@ export class TaskForm {
     }
     handleSubmit(event) {
         event.preventDefault();
-        const taskItem = new TaskItem({
+        const task = {
             title: this.titleInputEl.value,
             description: this.descriptionEl.value,
-        });
-        taskItem.mount("#Todo");
+        };
+        // 作成したタスクをTodosを管理する配列に追加
+        taskTodosAdmin.addTask(task);
         this.clearInput();
     }
     bindEvents() {
