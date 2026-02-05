@@ -1,6 +1,8 @@
 import type { TaskTodos } from "../Types/TaskTodosType.js";
 import type { Task } from "../Types/TaskType.js";
 import { TaskItem } from "../Component/TaskItem.js";
+import { sessionStorageInstance } from "../SessionStorage/SessionStorage.js";
+import { jsonTransfer } from "../Transfer/jsonTransfer.js";
 
 class TaskTodosAdmin {
   taskTodos: TaskTodos;
@@ -10,15 +12,38 @@ class TaskTodosAdmin {
   }
 
   addTask(task: Task) {
-    this.taskTodos = [...this.taskTodos, task];
-    console.log(this.taskTodos);
+    const jsonTodosStorage = sessionStorageInstance.getItem();
+    console.log(jsonTodosStorage);
+    if (jsonTodosStorage) {
+      const todosStorage = jsonTransfer.jsonParse(jsonTodosStorage);
+      console.log(todosStorage);
+      this.taskTodos = [...todosStorage, task];
+      sessionStorageInstance.setItem(this.taskTodos);
+      return;
+    }
+    this.taskTodos.push(task);
+    sessionStorageInstance.setItem(this.taskTodos);
   }
 
   getTasks() {
-    this.taskTodos.forEach((task) => {
-      const taskItem = new TaskItem(task);
+    const jsonTodosStorage = sessionStorageInstance.getItem();
+    if (jsonTodosStorage) {
+      const todosStorage = jsonTransfer.jsonParse(jsonTodosStorage);
+      todosStorage.forEach((task: Task) => {
+        const taskItem = new TaskItem(task);
+        taskItem.mount("#Todo");
+      });
+    }
+  }
+
+  getNewTask() {
+    const jsonTodosStorage = sessionStorageInstance.getItem();
+    if (jsonTodosStorage) {
+      const todosStorage = jsonTransfer.jsonParse(jsonTodosStorage);
+      const newTask = todosStorage[todosStorage.length - 1];
+      const taskItem = new TaskItem(newTask);
       taskItem.mount("#Todo");
-    });
+    }
   }
 }
 

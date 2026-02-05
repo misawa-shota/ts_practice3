@@ -20,7 +20,7 @@ export class TaskForm {
 
     // 作成したタスクをTodosを管理する配列に追加
     taskTodosAdmin.addTask(task);
-    taskTodosAdmin.getTasks();
+    taskTodosAdmin.getNewTask();
 
     this.clearInput();
   }

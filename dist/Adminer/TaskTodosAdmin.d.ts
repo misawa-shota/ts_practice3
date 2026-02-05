@@ -5,6 +5,7 @@ declare class TaskTodosAdmin {
     constructor();
     addTask(task: Task): void;
     getTasks(): void;
+    getNewTask(): void;
 }
 export declare const taskTodosAdmin: TaskTodosAdmin;
 export {};
