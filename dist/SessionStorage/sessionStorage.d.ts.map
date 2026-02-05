@@ -1,0 +1,1 @@
+{"version":3,"file":"SessionStorage.d.ts","sourceRoot":"","sources":["../../src/SessionStorage/SessionStorage.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,SAAS,EAAE,MAAM,2BAA2B,CAAC;AAE3D,cAAM,cAAc;IAClB,OAAO;IAIP,OAAO,CAAC,SAAS,EAAE,SAAS;CAG7B;AAED,eAAO,MAAM,sBAAsB,gBAAuB,CAAC"}

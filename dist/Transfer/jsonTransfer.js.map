@@ -1,0 +1,1 @@
+{"version":3,"file":"jsonTransfer.js","sourceRoot":"","sources":["../../src/Transfer/jsonTransfer.ts"],"names":[],"mappings":"AAAA,MAAM,YAAY;IAChB,SAAS,CAAC,gBAAwB;QAChC,OAAO,IAAI,CAAC,KAAK,CAAC,gBAAgB,CAAC,CAAC;IACtC,CAAC;CACF;AAED,MAAM,CAAC,MAAM,YAAY,GAAG,IAAI,YAAY,EAAE,CAAC"}
