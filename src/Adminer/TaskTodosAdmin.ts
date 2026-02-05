@@ -2,7 +2,7 @@ import type { TaskTodos } from "../Types/TaskTodosType.js";
 import type { Task } from "../Types/TaskType.js";
 import { TaskItem } from "../Component/TaskItem.js";
 import { sessionStorageInstance } from "../SessionStorage/SessionStorage.js";
-import { jsonTransfer } from "../Transfer/jsonTransfer.js";
+import { jsonTransfer } from "../Transfer/JsonTransfer.js";
 
 class TaskTodosAdmin {
   taskTodos: TaskTodos;
