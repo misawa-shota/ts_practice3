@@ -1,1 +1,1 @@
-{"version":3,"file":"TaskWorkingsType.d.ts","sourceRoot":"","sources":["../../src/Types/TaskWorkingsType.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,IAAI,EAAE,MAAM,eAAe,CAAC;AAE1C,MAAM,MAAM,YAAY,GAAG,SAAS,GAAG,CAAC,GAAG,IAAI,EAAE,CAAC,CAAC"}
+{"version":3,"file":"TaskWorkingsType.d.ts","sourceRoot":"","sources":["../../src/Types/TaskWorkingsType.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,IAAI,EAAE,MAAM,eAAe,CAAC;AAE1C,MAAM,MAAM,YAAY,GAAG,CAAC,GAAG,IAAI,EAAE,CAAC,CAAC"}
