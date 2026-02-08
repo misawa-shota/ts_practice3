@@ -7,5 +7,5 @@ taskListData.forEach((taskList) => {
     const list = new TaskList(taskList);
     list.mount("#container");
 });
-const taskItem = sessionStorageInstance.getTask("Todos");
+const taskItem = sessionStorageInstance.getTask("Todo");
 //# sourceMappingURL=index.js.map
