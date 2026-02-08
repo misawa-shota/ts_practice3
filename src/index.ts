@@ -9,4 +9,4 @@ taskListData.forEach((taskList) => {
   list.mount("#container");
 });
 
-const taskItem = sessionStorageInstance.getTask("Todos");
+const taskItem = sessionStorageInstance.getTask("Todo");
