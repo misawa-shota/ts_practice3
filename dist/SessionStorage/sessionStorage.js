@@ -11,11 +11,11 @@ class SessionStorage {
             const todosStorage = JSON.parse(jsonStorage);
             console.log(todosStorage);
             this.tasks = [...todosStorage, task];
-            sessionStorage.setTasks(key, this.tasks);
+            this.setTasks(key, this.tasks);
             return;
         }
         this.tasks.push(task);
-        sessionStorage.setTasks(key, this.tasks);
+        this.setTasks(key, this.tasks);
     }
     getTask(key) {
         const jsonStorage = sessionStorage.getItem(key);
