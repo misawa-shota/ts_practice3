@@ -1,8 +1,7 @@
 import { TaskForm } from "./Component/TaskForm.js";
 import { TaskList } from "./Component/TaskList.js";
 import { taskListData } from "./Types/TaskListType.js";
-import { taskTodosAdmin } from "./Adminer/TaskTodosAdmin.js";
-import { TaskItem } from "./Component/TaskItem.js";
+import { sessionStorageInstance } from "./SessionStorage/SessionStorage.js";
 
 new TaskForm();
 taskListData.forEach((taskList) => {
@@ -10,4 +9,4 @@ taskListData.forEach((taskList) => {
   list.mount("#container");
 });
 
-taskTodosAdmin.getTasks();
+const taskItem = sessionStorageInstance.getTask("Todos");

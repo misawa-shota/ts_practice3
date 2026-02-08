@@ -1,3 +1,3 @@
 import type { Task } from "./TaskType.js";
 export type Tasks = [...Task[]];
-//# sourceMappingURL=TaskTodosType.d.ts.map
+//# sourceMappingURL=TasksType.d.ts.map

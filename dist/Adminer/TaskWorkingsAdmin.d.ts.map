@@ -1,1 +1,1 @@
-{"version":3,"file":"TaskWorkingsAdmin.d.ts","sourceRoot":"","sources":["../../src/Adminer/TaskWorkingsAdmin.ts"],"names":[],"mappings":""}
+{"version":3,"file":"TaskWorkingsAdmin.d.ts","sourceRoot":"","sources":["../../src/Adminer/TaskWorkingsAdmin.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,YAAY,EAAE,MAAM,8BAA8B,CAAC;AAEjE,cAAM,iBAAiB;IACrB,YAAY,EAAE,YAAY,CAAC;;CAK5B;AAED,eAAO,MAAM,iBAAiB,mBAA0B,CAAC"}

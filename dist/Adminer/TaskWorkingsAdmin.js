@@ -4,5 +4,5 @@ class TaskWorkingsAdmin {
         this.taskWorkings = [];
     }
 }
-export {};
+export const taskWorkingsAdmin = new TaskWorkingsAdmin();
 //# sourceMappingURL=TaskWorkingsAdmin.js.map
