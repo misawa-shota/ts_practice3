@@ -2,7 +2,7 @@ import type { Task } from "../Types/TaskType.js";
 import { type TaskListType, taskListData } from "../Types/TaskListType.js";
 import { UiComponent } from "./UiComponent.js";
 import type { ClickAbleElement } from "../Types/ClickAbleElementType.js";
-import { taskTodosAdmin } from "../Adminer/TaskTodosAdmin.js";
+import { sessionStorageInstance } from "../SessionStorage/SessionStorage.js";
 
 export class TaskItem extends UiComponent<HTMLLIElement> implements ClickAbleElement {
 
@@ -29,11 +29,19 @@ export class TaskItem extends UiComponent<HTMLLIElement> implements ClickAbleEle
     }
     const nextIndex = currentIndex + 1;
     if (nextIndex < taskListData.length) {
-      const nextMountPoint = document.getElementById(`${taskListData[nextIndex]}`)!;
+      const nextKey = taskListData[nextIndex];
+      if (!nextKey) {
+        throw new Error("Invalid next task list key");
+      }
+      const nextMountPoint = document.getElementById(`${nextKey}`)!;
       nextMountPoint.insertAdjacentElement("beforeend", this.element);
+      sessionStorageInstance.addTask(nextKey, this.task);
+      sessionStorageInstance.removeTask(currentTaskListData, this.task);
+      sessionStorageInstance.getNewTask(nextKey);
       return;
     }
     this.element.remove();
+    sessionStorageInstance.removeTask(currentTaskListData, this.task);
   }
 
   bindEvent() {

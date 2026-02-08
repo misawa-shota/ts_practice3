@@ -1,6 +1,6 @@
 import { taskListData } from "../Types/TaskListType.js";
 import { UiComponent } from "./UiComponent.js";
-import { taskTodosAdmin } from "../Adminer/TaskTodosAdmin.js";
+import { sessionStorageInstance } from "../SessionStorage/SessionStorage.js";
 export class TaskItem extends UiComponent {
     task;
     constructor(task) {
@@ -24,11 +24,19 @@ export class TaskItem extends UiComponent {
         }
         const nextIndex = currentIndex + 1;
         if (nextIndex < taskListData.length) {
-            const nextMountPoint = document.getElementById(`${taskListData[nextIndex]}`);
+            const nextKey = taskListData[nextIndex];
+            if (!nextKey) {
+                throw new Error("Invalid next task list key");
+            }
+            const nextMountPoint = document.getElementById(`${nextKey}`);
             nextMountPoint.insertAdjacentElement("beforeend", this.element);
+            sessionStorageInstance.addTask(nextKey, this.task);
+            sessionStorageInstance.removeTask(currentTaskListData, this.task);
+            sessionStorageInstance.getNewTask(nextKey);
             return;
         }
         this.element.remove();
+        sessionStorageInstance.removeTask(currentTaskListData, this.task);
     }
     bindEvent() {
         this.element.addEventListener("click", this.handleClick.bind(this));
