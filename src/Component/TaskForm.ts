@@ -19,8 +19,8 @@ export class TaskForm {
     }
 
     // 作成したタスクをTodosを管理する配列に追加
-    sessionStorageInstance.addTask("Todos",task);
-    sessionStorageInstance.getNewTask("Todos");
+    sessionStorageInstance.addTask("Todo",task);
+    sessionStorageInstance.getNewTask("Todo");
 
     this.clearInput();
   }

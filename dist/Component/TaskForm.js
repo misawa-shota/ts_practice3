@@ -1,4 +1,4 @@
-import { taskTodosAdmin } from "../Adminer/TaskTodosAdmin.js";
+import { sessionStorageInstance } from "../SessionStorage/SessionStorage.js";
 export class TaskForm {
     element;
     titleInputEl;
@@ -17,8 +17,8 @@ export class TaskForm {
             description: this.descriptionEl.value,
         };
         // 作成したタスクをTodosを管理する配列に追加
-        taskTodosAdmin.addTask(task);
-        taskTodosAdmin.getNewTask();
+        sessionStorageInstance.addTask("Todos", task);
+        sessionStorageInstance.getNewTask("Todos");
         this.clearInput();
     }
     bindEvents() {
