@@ -52,6 +52,10 @@ class SessionStorage {
     const jsonStorage = sessionStorage.getItem(key);
     if (jsonStorage) {
       const storage: Tasks = JSON.parse(jsonStorage);
+      console.log(taskToRemove);
+      storage.forEach((task) => {
+        console.log(task);
+      });
       const updatedTasks = storage.filter(
         (task) => task !== taskToRemove
       );
