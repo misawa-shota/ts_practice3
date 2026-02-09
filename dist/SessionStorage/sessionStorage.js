@@ -14,6 +14,7 @@ class SessionStorage {
             this.setTasks(key, this.tasks);
             return;
         }
+        console.log(this.tasks);
         this.tasks.push(task);
         this.setTasks(key, this.tasks);
     }
@@ -44,7 +45,9 @@ class SessionStorage {
         if (jsonStorage) {
             const storage = JSON.parse(jsonStorage);
             const updatedTasks = storage.filter((task) => task !== taskToRemove);
-            sessionStorage.setItem(key, JSON.stringify(updatedTasks));
+            console.log(updatedTasks);
+            document.querySelectorAll(`#${key} > li`).forEach((el) => el.remove());
+            this.setTasks(key, updatedTasks);
             updatedTasks.forEach((task) => {
                 const taskItem = new TaskItem(task);
                 taskItem.mount(`#${key}`);
