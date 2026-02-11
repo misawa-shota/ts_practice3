@@ -48,7 +48,7 @@ class SessionStorage {
             storage.forEach((task) => {
                 console.log(task);
             });
-            const updatedTasks = storage.filter((task) => task !== taskToRemove);
+            const updatedTasks = storage.filter((task) => JSON.stringify(task) !== JSON.stringify(taskToRemove));
             console.log(updatedTasks);
             document.querySelectorAll(`#${key} > li`).forEach((el) => el.remove());
             this.setTasks(key, updatedTasks);
