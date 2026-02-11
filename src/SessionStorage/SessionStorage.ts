@@ -31,7 +31,9 @@ class SessionStorage {
         const taskItem = new TaskItem(task);
         taskItem.mount(`#${key}`);
       });
+      return;
     }
+    return;
   }
 
   getNewTask(key: string) {

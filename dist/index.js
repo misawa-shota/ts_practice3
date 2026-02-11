@@ -6,6 +6,6 @@ new TaskForm();
 taskListData.forEach((taskList) => {
     const list = new TaskList(taskList);
     list.mount("#container");
+    sessionStorageInstance.getTask(taskList);
 });
-const taskItem = sessionStorageInstance.getTask("Todo");
 //# sourceMappingURL=index.js.map
