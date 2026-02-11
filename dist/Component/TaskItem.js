@@ -32,7 +32,6 @@ export class TaskItem extends UiComponent {
             nextMountPoint.insertAdjacentElement("beforeend", this.element);
             sessionStorageInstance.addTask(nextKey, this.task);
             sessionStorageInstance.removeTask(currentTaskListData, this.task);
-            sessionStorageInstance.getNewTask(nextKey);
             return;
         }
         this.element.remove();
